@@ -17,7 +17,6 @@
 // TODO: écris ta solution ici.
 function bienvenue(prenom, nom)
 {
-
-    console.log(`Bienvenue [${prenom}] [${nom}]`)
+    return `Bienvenue ${prenom} ${nom}`
 }
-bienvenue("Hind", "Sahli")
+console.log(bienvenue("Hind", "Sahli"))

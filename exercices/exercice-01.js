@@ -20,6 +20,7 @@ function soustraire(a, b)
 {
    return a-b
 }
-let resultat = soustraire(1,6)
+let resultat = soustraire(1, 6)
 
 console.log(resultat)
+

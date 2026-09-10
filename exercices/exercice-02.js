@@ -18,4 +18,4 @@
 
 let multiplier=(a, b)=>a*b
 
-console.log( multiplier(-1,6))
+console.log( multiplier(-1, 6))
