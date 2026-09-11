@@ -16,4 +16,19 @@
 // 1. Identifie les données nécessaires.
 // 2. Écris ta solution sous cette ligne.
 // TODO: écris ta solution ici.
+// standard general-purpose formula for for generating a random integer between any two bounds  Math.floor(Math.random() * (max - min + 1)) + min
 
+function genererMotDePasse(longueur)
+{
+    let passwd = ""
+    for(let i = 1 ; i <= longueur ; i++)
+    {
+        let random = Math.floor(Math.random()*10)
+        if(i%2 == 0)
+            passwd = passwd + "A" 
+        else
+            passwd = passwd + random
+    }
+    return passwd
+}
+console.log(genererMotDePasse(8))

@@ -10,7 +10,9 @@
  * Consignes :
  * 1. Déclarez une variable globale (hors des fonctions) or = 0.
  * 2. Créez une fonction ajouterOr(montant) qui ajoute à la bourse et affiche "Vous avez ramassé [montant] or. Total: [or]".
- * 3. Créez une fonction depenserOr(montant) qui vérifie si le héros a assez d'or. Si oui, déduit l'or et affiche l'achat. Sinon, affiche "Fonds insuffisants".
+ * 3. Créez une fonction depenserOr(montant) qui vérifie si le héros a assez d'or. Si oui, déduit l'or et affiche l'achat. 
+ * Achat effectué. Il vous reste [or] or.
+ * Sinon, affiche "Fonds insuffisants".
  * 4. Créez une fonction combatGagne() qui appelle ajouterOr avec un montant aléatoire entre 10 et 50.
  * 5. Simulez une aventure : gagnez 3 combats, puis tentez d'acheter une épée à 100 or.
  * Bonus : Utilisez des closures pour éviter d'avoir or en variable globale vulnérable !
@@ -22,36 +24,35 @@
 
 // Découpe d'abord le problème en petites étapes.
 // TODO: écris ta solution ici.
-
+// standard general-purpose formula for for generating a random integer between any two bounds  Math.floor(Math.random() * (max - min + 1)) + min
 
 let or = 0;
-function ajouterOr(montant) 
-{
-    or += montant;
-    console.log(`Vous avez ramassé ${montant} or. Total: ${or}`);
-}
 
-function depenserOr(montant) 
+function ajouterOr(montant)
 {
-    if (or >= montant) 
-     {
-        or -= montant;
-        console.log(`Achat effectué. Il vous reste ${or} or.`);
-    } 
-    else 
+    or += montant
+    console.log(`vous avez ramassé ${montant} or. Total: ${or}`)
+}
+function depenserOr(price) 
+{
+    if (price > or)
     {
-        console.log("Fonds insuffisants");
+        console.log("Fonds insuffisants")
+    }
+    else
+    {
+        or -= price
+        console.log(`Achat effectué. Il vous reste ${or} or.`);
     }
 }
 
-function combatGagne() 
+function combatGagne()
 {
-    let montant = Math.floor(Math.random() * 41) + 10;
-    ajouterOr(montant);
+    let montant = Math.floor(Math.random()*41)+10;
+    ajouterOr(montant)
 }
+combatGagne()
+combatGagne()
+combatGagne()
 
-combatGagne();
-combatGagne();
-combatGagne();
-
-depenserOr(100);
+depenserOr(100)
